@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>UWB Localization Logbook</title>
+    </head>
+    <body>
+        <header>
+            <h1>UWB Localization Logbook</h1>
+            <p>Record UWB indoor localization experiments and compare ground truth and estimated positions.</p>
+            <p>All coordinates are in meters. Target 3D position error: ≤ 0.01 m per sample.</p>
+        </header>
+
+        <main>
+            <section>
+                <h2>Experiment Details</h2>
+
+                <form id="experiment-form">
+                    <div>
+                        <label for="experiment-name">Experiment name</label>
+                        <input type="text" id="experiment-name" name="experiment_name" required>
+                    </div>
+
+                    <div>
+                        <label for="experiment-date">Experiment date</label>
+                        <input type="date" id="experiment-date" name="experiment_date" required>
+                    </div>
+
+                    <div>
+                        <label for="experiment-notes">Notes</label>
+                        <textarea id="experiment-notes" name="notes" rows="4"></textarea>
+                    </div>
+                </form>
+            </section>
+
+            <section>
+                <h2>Anchor Coordinates</h2>
+                <p>Enter anchor positions in meters.</p>
+
+                <form id="anchor-form">
+                    <div>
+                        <label for="anchor-id">Anchor ID</label>
+                        <input type="text" id="anchor-id" name="anchor_id" required>
+                    </div>
+
+                    <div>
+                        <label for="anchor-x">X (m)</label>
+                        <input type="number" id="anchor-x" name="x" step="any" required>
+                    </div>
+
+                    <div>
+                        <label for="anchor-y">Y (m)</label>
+                        <input type="number" id="anchor-y" name="y" step="any" required>
+                    </div>
+
+                    <div>
+                        <label for="anchor-z">Z (m)</label>
+                        <input type="number" id="anchor-z" name="z" step="any" required>
+                    </div>
+
+                    <button type="button" disabled>Add anchor</button>
+                </form>
+            </section>
+
+            <section>
+                <h2>Localization Sample</h2>
+                <p>Enter ground truth and estimated positions in meters.</p>
+
+                <form id="sample-form">
+                    <fieldset>
+                        <legend>Ground truth</legend>
+
+                        <div>
+                            <label for="true-x">X (m)</label>
+                            <input type="number" id="true-x" name="true_x" step="any" required>
+                        </div>
+
+                        <div>
+                            <label for="true-y">Y (m)</label>
+                            <input type="number" id="true-y" name="true_y" step="any" required>
+                        </div>
+
+                        <div>
+                            <label for="true-z">Z (m)</label>
+                            <input type="number" id="true-z" name="true_z" step="any" required>
+                        </div>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>Estimated position</legend>
+
+                        <div>
+                            <label for="estimated-x">X (m)</label>
+                            <input type="number" id="estimated-x" name="estimated_x" step="any" required>
+                        </div>
+
+                        <div>
+                            <label for="estimated-y">Y (m)</label>
+                            <input type="number" id="estimated-y" name="estimated_y" step="any" required>
+                        </div>
+
+                        <div>
+                            <label for="estimated-z">Z (m)</label>
+                            <input type="number" id="estimated-z" name="estimated_z" step="any" required>
+                        </div>
+                    </fieldset>
+
+                    <button type="button" disabled>Add sample</button>
+                </form>
+            </section>
+                        <section>
+                <h2>Anchor List</h2>
+
+                <table>
+                    <caption>Anchor positions in meters</caption>
+                    <thead>
+                        <tr>
+                            <th scope="col">Anchor ID</th>
+                            <th scope="col">X (m)</th>
+                            <th scope="col">Y (m)</th>
+                            <th scope="col">Z (m)</th>
+                        </tr>
+                    </thead>
+                    <tbody id="anchor-list">
+                        <tr>
+                            <td colspan="4">No anchors added yet.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <section>
+                <h2>Sample Results</h2>
+                <p>A sample meets the target when its 3D error is ≤ 0.01 m.</p>
+
+                <table>
+                    <caption>Localization samples and 3D position errors</caption>
+                    <thead>
+                        <tr>
+                            <th scope="col">Sample</th>
+                            <th scope="col">True X (m)</th>
+                            <th scope="col">True Y (m)</th>
+                            <th scope="col">True Z (m)</th>
+                            <th scope="col">Estimated X (m)</th>
+                            <th scope="col">Estimated Y (m)</th>
+                            <th scope="col">Estimated Z (m)</th>
+                            <th scope="col">3D error (m)</th>
+                            <th scope="col">Target status</th>
+                        </tr>
+                    </thead>
+                    <tbody id="sample-results">
+                        <tr>
+                            <td colspan="9">No samples added yet.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+        </main>
+    </body>
+</html>
