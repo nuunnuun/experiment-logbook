@@ -4,6 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>UWB Localization Logbook</title>
+        <link rel="stylesheet" href="style.css">
     </head>
     <body>
         <header>
@@ -109,52 +110,57 @@
                     <button type="button" disabled>Add sample</button>
                 </form>
             </section>
-                        <section>
+
+            <section>
                 <h2>Anchor List</h2>
 
-                <table>
-                    <caption>Anchor positions in meters</caption>
-                    <thead>
-                        <tr>
-                            <th scope="col">Anchor ID</th>
-                            <th scope="col">X (m)</th>
-                            <th scope="col">Y (m)</th>
-                            <th scope="col">Z (m)</th>
-                        </tr>
-                    </thead>
-                    <tbody id="anchor-list">
-                        <tr>
-                            <td colspan="4">No anchors added yet.</td>
-                        </tr>
-                    </tbody>
-                </table>
+                <div class="table-wrapper">
+                    <table>
+                        <caption>Anchor positions in meters</caption>
+                        <thead>
+                            <tr>
+                                <th scope="col">Anchor ID</th>
+                                <th scope="col">X (m)</th>
+                                <th scope="col">Y (m)</th>
+                                <th scope="col">Z (m)</th>
+                            </tr>
+                        </thead>
+                        <tbody id="anchor-list">
+                            <tr>
+                                <td colspan="4">No anchors added yet.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </section>
 
             <section>
                 <h2>Sample Results</h2>
                 <p>A sample meets the target when its 3D error is ≤ 0.01 m.</p>
 
-                <table>
-                    <caption>Localization samples and 3D position errors</caption>
-                    <thead>
-                        <tr>
-                            <th scope="col">Sample</th>
-                            <th scope="col">True X (m)</th>
-                            <th scope="col">True Y (m)</th>
-                            <th scope="col">True Z (m)</th>
-                            <th scope="col">Estimated X (m)</th>
-                            <th scope="col">Estimated Y (m)</th>
-                            <th scope="col">Estimated Z (m)</th>
-                            <th scope="col">3D error (m)</th>
-                            <th scope="col">Target status</th>
-                        </tr>
-                    </thead>
-                    <tbody id="sample-results">
-                        <tr>
-                            <td colspan="9">No samples added yet.</td>
-                        </tr>
-                    </tbody>
-                </table>
+                <div class="table-wrapper">
+                    <table>
+                        <caption>Localization samples and 3D position errors</caption>
+                        <thead>
+                            <tr>
+                                <th scope="col">Sample</th>
+                                <th scope="col">True X (m)</th>
+                                <th scope="col">True Y (m)</th>
+                                <th scope="col">True Z (m)</th>
+                                <th scope="col">Estimated X (m)</th>
+                                <th scope="col">Estimated Y (m)</th>
+                                <th scope="col">Estimated Z (m)</th>
+                                <th scope="col">3D error (m)</th>
+                                <th scope="col">Target status</th>
+                            </tr>
+                        </thead>
+                        <tbody id="sample-results">
+                            <tr>
+                                <td colspan="9">No samples added yet.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </section>
         </main>
     </body>

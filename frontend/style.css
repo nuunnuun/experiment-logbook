@@ -1,0 +1,166 @@
+/* Include padding and borders in each element's size */
+* {
+    box-sizing: border-box;
+}
+
+/* Page */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f6f8;
+    color: #1f2937;
+    line-height: 1.6;
+    font-size: 16px;
+    margin: 0;
+}
+
+/* Main content area */
+header, main {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 24px;
+}
+
+header {
+    padding: 32px 24px;
+}
+
+h1 {
+    margin-top: 0;
+    margin-bottom: 12px;
+}
+
+header p {
+    margin: 8px 0;
+}
+
+/* Section cards */
+section {
+    background-color: #ffffff;
+    padding: 24px;
+    margin-bottom: 24px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+}
+
+h2 {
+    margin-top: 0;
+    margin-bottom: 16px;
+}
+
+/* Form fields */
+form div {
+    margin-bottom: 16px;
+}
+
+label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: bold;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    background-color: #ffffff;
+    color: #1f2937;
+    font: inherit;
+}
+
+textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+/* Highlight the field being edited */
+input:focus, textarea:focus {
+    outline: 2px solid #2563eb;
+    outline-offset: 2px;
+}
+
+/* Coordinate groups */
+fieldset {
+    min-width: 0;
+    margin: 0 0 16px;
+    padding: 16px;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+}
+
+legend {
+    font-weight: bold;
+    padding: 0 6px;
+}
+
+/* Buttons */
+button {
+    padding: 10px 16px;
+    border: none;
+    border-radius: 6px;
+    background-color: #2563eb;
+    color: #ffffff;
+    font: inherit;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:hover:not(:disabled) {
+    background-color: #1d4ed8;
+}
+
+button:focus-visible {
+    outline: 2px solid #2563eb;
+    outline-offset: 3px;
+}
+
+button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* Allow wide tables to scroll horizontally */
+.table-wrapper {
+    overflow-x: auto;
+}
+
+/* Tables */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 12px;
+    border: 1px solid #d1d5db;
+    text-align: left;
+    vertical-align: top;
+}
+
+th {
+    background-color: #eef2ff;
+    font-weight: bold;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f9fafb;
+}
+
+/* Smaller screens */
+@media (max-width: 600px) {
+    header, main {
+        padding: 16px;
+    }
+
+    section {
+        padding: 16px;
+    }
+
+    h1 {
+        font-size: 26px;
+    }
+
+    th, td {
+        padding: 8px;
+    }
+}
